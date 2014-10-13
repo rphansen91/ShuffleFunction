@@ -1,0 +1,21 @@
+.graph {width: 60%; float: left; display: inline-block;position: relative;margin-top: 60px;}
+.stats {width: 40%; float: left; display: inline-block;}
+.graph>div{text-align: center;}
+.magnitude {background-color: black;float: left; height: 10px;margin: 15px 0 15px 5px;}
+.left {float: left;width: 40px;overflow: hidden;}
+.clear {clear: both;}
+.left p {margin: 0;}
+.equal {position: absolute;height: 100%;top: 0;width: 2px;background-color: red;left: 461.666667px;}
+td, th {padding: 2px 5px;text-align: center;white-space: nowrap;}
+.pass {color: green; display: none; font-size: 20px;}
+.fail {color: red; display: none; font-size: 20px;}
+
+table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > * > tr > th, table.wikitable > * > tr > td {
+	border: 1px #aaa solid;
+	padding: 0.2em;
+}
+table.wikitable > tr > th, table.wikitable > * > tr > th {
+	background-color: #f2f2f2;
+	text-align: center;
+}
+.highlight {background-color: #f3f315;}

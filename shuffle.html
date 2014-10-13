@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fair Shuffle</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./bars.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="./shuffle.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="text-center">
+				<h1>Shuffle Function</h1>
+				<a id="runTest" class="btn btn-primary">Run Test</a>
+			</div>
+			<div class="graph">
+				<div id="abc">
+					<div class="left">
+						<p>ABC</p>
+						<p class="count"></p>
+					</div>
+					<div class="magnitude"></div>
+					<div class="clear"></div>
+				</div>
+				<div id="acb">
+					<div class="left">
+						<p>ACB</p>
+						<p class="count"></p>
+					</div>
+					<div class="magnitude"></div>
+					<div class="clear"></div>
+				</div>
+				<div id="bac">
+					<div class="left">
+						<p>BAC</p>
+						<p class="count"></p>
+					</div>
+					<div class="magnitude"></div>
+					<div class="clear"></div>
+				</div>
+				<div id="bca">
+					<div class="left">
+						<p>BCA</p>
+						<p class="count"></p>
+					</div>
+					<div class="magnitude"></div>
+					<div class="clear"></div>
+				</div>
+				<div id="cab">
+					<div class="left">
+						<p>CAB</p>
+						<p class="count"></p>
+					</div>
+					<div class="magnitude"></div>
+					<div class="clear"></div>
+				</div>
+				<div id="cba">
+					<div class="left">
+						<p>CBA</p>
+						<p class="count"></p>
+					</div>
+					<div class="magnitude"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="equal"></div>
+			</div>
+			<div class="stats">
+				<h3 class="allcount">Total: 0 Shuffles</h3>
+				<table>
+					<thead><th>ABC</th><th>ACB</th><th>BAC</th><th>BCA</th><th>CAB</th><th>CBA</th></thead>
+					<tr>
+						<td><p id="abc-percent">0%</p></td>
+						<td><p id="acb-percent">0%</p></td>
+						<td><p id="bac-percent">0%</p></td>
+						<td><p id="bca-percent">0%</p></td>
+						<td><p id="cab-percent">0%</p></td>
+						<td><p id="cba-percent">0%</p></td>
+					</tr>
+				</table>
+				<p>H<sub>0</sub>: Fair Shuffle E<sub>abc</sub>=E<sub>acb</sub>=E<sub>bac</sub>=E<sub>bcs</sub>=E<sub>cab</sub>=E<sub>cba</sub>=0.16667</p>
+				<p>H<sub>1</sub>: UnFair Shuffle E<sub>abc</sub>!=E<sub>acb</sub>!=E<sub>bac</sub>!=E<sub>bcs</sub>!=E<sub>cab</sub>!=E<sub>cba</sub></p>
+				<p>d&#402;: 6 - 1 = 5</p>
+				<p>&#945; = 0.05</p>
+				<table class="wikitable">
+					<thead><th>df</th><th colspan="11">Chi Squared Value</th></thead>
+					<tbody>
+						<tr><td class="highlight">5</td><td>1.14</td><td>1.61</td><td>2.34</td><td>3.00</td><td>4.35</td><td>6.06</td><td>7.29</td><td>9.24</td><td class="highlight">11.07</td><td>15.09</td><td>20.52</td></tr>
+						<tr><td>P-value</td><td>0.95</td><td>0.90</td><td>0.80</td><td>0.70</td><td>0.50</td><td>0.30</td><td>0.20</td><td>0.10</td><td class="highlight">0.05</td><td>0.01</td><td>0.001</td></tr>
+					</tbody>
+					<tfoot><td colspan="12">Table compliments of <a target="_blank" href="http://en.wikipedia.org/wiki/Chi-squared_distribution#Table_of_.CF.872_value_vs_p-value">wikipedia</a></td></tfoot>
+				</table>
+				<p>If our Chi Squared Statistic is greater than 11.07 we will reject the hypothesis. If less than 11.07 we can safely assume the shuffle function is consistent with expected results and we can not reject the hypothesis.</p>
+				<p>Pearson's cumulative test statistic X&#178; = &#931; (O<sub>i</sub> - E<sub>i</sub>)&#178; / E<sub>i</sub></p>
+				<p>Chi Squared Statistic = <span id="chi">_</span></p>
+				<p class="pass">Do Not Reject Null Hypothesis</p>
+				<p class="fail">Reject Null Hypothesis</p>
+			</div>
+		</div>
+	</body>
+</html>
